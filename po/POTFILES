@@ -1,0 +1,6 @@
+data/com.potooFactory.eu.desktop.in
+data/com.potooFactory.eu.metainfo.xml.in
+data/com.potooFactory.eu.gschema.xml
+src/main.c
+src/tp-2a-s4-window.c
+src/tp-2a-s4-window.ui

@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <title>Quaternion 3D Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #chart-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #status {
+            /*display:;*/
+            position: absolute;
+        }
+
+    </style>
+</head>
+
+<body>
+<h1 id="status">NOT CONNECTED</h1>
+<div id="chart-container"></div>
+    <script src=" https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js "></script>
+    <script>
+        let jsonObj = {};
+
+
+        var exampleSocket = new WebSocket("ws://127.0.0.1:8080/");
+
+        exampleSocket.onerror = function (error) {
+            console.log(error);
+        }
+
+        exampleSocket.onclose = function (e) {
+            document.getElementById('status').innerText = 'DISCONNECTED'
+        };
+
+
+        exampleSocket.onmessage = function(event) {
+            if (JSON.stringify(jsonObj) === event.data) {
+                console.log('SAME !')
+                return;
+            }
+            jsonObj = JSON.parse(event.data);
+
+
+            // console.log('HI !')
+            console.log(jsonObj)
+
+            if (Object.keys(jsonObj).length <= 0) {
+                console.log('JSOM EMPTY !')
+                return;
+            }
+
+            document.getElementById('status').innerText = 'CONNECTED'
+
+            var dom = document.getElementById('chart-container');
+            var myChart = echarts.init(dom, null, {
+                renderer: 'canvas',
+                useDirtyRect: false
+            });
+            var app = {};
+            
+            let links = [];
+
+            // links.push(jsonObj['links']);
+
+            // for (let i = 0; i < ; i++) {
+            //
+            // }
+
+            var option;
+
+            option = {
+                tooltip: {},
+                animationDurationUpdate: 1500,
+                animationEasingUpdate: 'quinticInOut',
+                series: [
+                    {
+                        type: 'graph',
+                        layout: 'force', // Set layout to 'force' for auto placement
+                        force: {
+                            // Add force-directed layout configurations
+                            repulsion: 1000, // Adjust the repulsion strength
+                            edgeLength: 200
+                        },
+                        symbolSize: 50,
+                        roam: true,
+                        label: {
+                            show: true
+                        },
+                        draggable: true,
+                        edgeSymbol: ['circle', 'arrow'],
+                        edgeSymbolSize: [4, 10],
+                        edgeLabel: {
+                            fontSize: 20
+                        },
+                        emphasis: {
+                            focus: 'adjacency',
+                            lineStyle: {
+                                width: 10
+                            }
+                        },
+                        data: jsonObj['nodes'],
+                        links: jsonObj['links'],
+                        lineStyle: {
+                            opacity: 0.9,
+                            width: 2,
+                            curveness: 0
+                        }
+                    }
+                ]
+            };
+
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+
+            window.addEventListener('resize', myChart.resize);
+        }
+    </script>
+</body>
+
+</html>

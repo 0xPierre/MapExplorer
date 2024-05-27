@@ -1,0 +1,17 @@
+/data/pays_de_la_loire_graph.txt
+/data/pays_de_la_loire_inter.txt
+/data/mayenne_inter.txt
+/data/mayenne_graph.txt
+/data/laval_inter.txt
+/data/laval_graph.txt
+/data/france_inter.txt
+/data/france_graph.txt
+/data/adresses_all.csv
+/data/adresses-53.csv
+/data/.adresses_all.csv.swp
+output
+.idea/
+/buildDir/
+/data/ressources/Data/
+/data/ressources/Address/adresses-53.csv
+/data/ressources/Address/adresses_all.csv

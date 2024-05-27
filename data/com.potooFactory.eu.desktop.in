@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=tp-2a-s4
+Exec=tp-2a-s4
+Icon=com.potooFactory.eu
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

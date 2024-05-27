@@ -1,0 +1,82 @@
+{
+    "id" : "com.potooFactory.eu",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "46",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "tp-2a-s4",
+    "finish-args" : [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--device=dri",
+        "--socket=wayland"
+    ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+            {
+            "name" : "protobuf",
+            "buildsystem" : "autotools",
+            "config-opts": [ "DIST_LANG=cpp" ],
+            "cleanup" : [
+                "/bin/protoc*",
+                "/lib/libprotoc*",
+                "/lib/libprotobuf-lite*"
+            ],
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://github.com/protocolbuffers/protobuf/releases/download/v3.17.3/protobuf-all-3.17.3.tar.gz",
+                    "sha256" : "77ad26d3f65222fd96ccc18b055632b0bfedf295cb748b712a98ba1ac0b704b2"
+                }
+            ]
+        },
+            {
+            "name" : "protobuf-c",
+            "buildsystem" : "autotools",
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://github.com/protobuf-c/protobuf-c/releases/download/v1.4.0/protobuf-c-1.4.0.tar.gz",
+                    "sha256" : "26d98ee9bf18a6eba0d3f855ddec31dbe857667d269bc0b6017335572f85bbcb"
+                }
+            ]
+        },
+            {
+            "name" : "libshumate",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Ddemos=false",
+                "-Dgtk_doc=false",
+                "-Dvapi=false"
+            ],
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://www.home-cloud.fr/s/rc4mjNy5oyByQH7/download/libshumate-main.tar.gz",
+                    "sha256" : "7fcb931a30edb71ee23db4a9b9e98776654cb5c78d2046f7341016ce170753bf"
+                }
+            ]
+        },
+        {
+            "name" : "tp-2a-s4",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "file:///home/adrien/Projects/C"
+                }
+            ]
+        }
+    ]
+}

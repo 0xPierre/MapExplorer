@@ -1,0 +1,4 @@
+./data/ressources/Data/pays_de_la_loire_graph.txt
+./data/ressources/Data/pays_de_la_loire_inter.txt
+13
+165244 186538 126996 239427 103471 83359 57958 284450 215905 256845 65368 98490 170972 

@@ -1,0 +1,3 @@
+./data/ressources/Data/mayenne_graph.txt
+./data/ressources/Data/mayenne_inter.txt
+14687 17679

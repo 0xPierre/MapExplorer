@@ -1,0 +1,4 @@
+./data/ressources/Data/mayenne_graph.txt
+./data/ressources/Data/mayenne_inter.txt
+7
+23998 8954 30806 25455 7944 23860 916 

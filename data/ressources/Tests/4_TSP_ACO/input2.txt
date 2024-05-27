@@ -1,0 +1,4 @@
+./data/ressources/Data/mayenne_graph.txt
+./data/ressources/Data/mayenne_inter.txt
+17
+20535 23732 11483 26191 9817 24276 8702 4498 26298 8926 28375 20150 7724 2867 14286 13652 5483 

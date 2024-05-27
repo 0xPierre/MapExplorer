@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="tp-2a-s4">
+	<schema id="com.potooFactory.eu" path="/com/potooFactory/eu/">
+	</schema>
+</schemalist>
