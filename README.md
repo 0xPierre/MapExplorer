@@ -1,5 +1,9 @@
 # Map explorer 🗺️
 
+Map Explorer is a project made for a school rush in 10 days. It consists of solving the salesman problem using a binary heap dijkstra with an Ant Colony Optimization. We also made an addresses autocomplete, with spatial hashing to recover the nearest intersection from the address, to run the ACO.
+
+# README For teachers :
+
 ## Please first download the project with maps assets here: [Project depo](https://www.home-cloud.fr/s/CxTpFrEzSEZ23jW)
 It contains addresses from Mayenne, Mayenne Graph, Mayenne Intersections and laval.
 
