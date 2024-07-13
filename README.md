@@ -4,7 +4,7 @@ Map Explorer is a project made with [BugProg](https://github.com/BugProg) for a 
 
 # README For teachers :
 
-## Please first download the project with maps assets here: [Project depo](https://www.home-cloud.fr/s/CxTpFrEzSEZ23jW)
+## Please first download the project with maps assets here: [Project depo](https://www.home-cloud.fr/s/oHgKTSg4zJ4jSfT)
 It contains addresses from Mayenne, Mayenne Graph, Mayenne Intersections and laval.
 
 [//]: # (To view this page with graphic comfort please follow this link:)
